@@ -1,0 +1,58 @@
+1:30 - 
+###############################################################################
+You Don't Know JS: ES6 & Beyond - http://dl.finebook.ir/book/8f/13126.pdf
+###############################################################################
+
+SHORTHAND OBJECT DEFINITION
+
+	var foo = [1,2,3];
+
+	var obj = {
+		foo
+	};
+
+	console.log(obj);
+	// {foo:[1,2,3]}
+
+BLOCK SCOPING
+	IMPLICIT
+		var a = 2
+
+		{
+			let a = 3, b, c = a;
+			console.log(a); // 3
+		}
+
+	FOR LOOP
+		for (let i = 0; i < 5; i++) {
+			// A new i is initialized every time, 
+			// so if that reference is used in the future
+			// when the value has changed, it remains the same
+		}
+
+	CONSTANTS
+		const a = 2;
+			- Restriction is on the setting of the reference, not of
+			the values of the reference.
+		const GLOBAL_VARIABLE
+
+SPREAD/REST
+	function test(a,b,c) {
+		console.log(a,b,c);
+	}
+
+	test(...[1,2,3]); // 1, 2, 3
+
+	Similar to test.apply(null, [1,2,3]);
+
+	var ott = [1,2,3];
+	var list = [0,...ott,5];
+
+	function gatherInputs(a,b,...c) {
+		console.log(c);
+	}
+	gatherInputs(1,2,6,7,8); // [6,7,8]
+
+	function sample (name, ...args) {} // args is a "rest" parameter
+
+
